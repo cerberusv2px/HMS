@@ -2,15 +2,16 @@
  * @param  {object} knex
  * @return {Promise}
  */
-
-const TABLE_NAME = 'hospitals';
+const TABLE_NAME = 'patients';
 
 exports.up = function(knex) {
   return knex.schema.createTable(TABLE_NAME, table => {
     table.increments();
     table.string('name').notNull();
     table.string('address').notNull();
-    table.string('phone_number').notNull();
+    table.string('dob').notNull();
+    table.integer('hospital_id').unsigned();
+    table.foreign('hospital_id').references('hospitals.id');
     table
       .timestamp('created_at')
       .notNull()

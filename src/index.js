@@ -30,7 +30,7 @@ app.use(json);
 app.use('/api', routes);
 
 app.listen(app.get('port'), app.get('host'), () => {
-  logger.info(`Server started at http://${app.get('host')}:${app.get('port')}/api`);
+  logger.info(`Server started at https://${app.get('host')}:${app.get('port')}/api`);
 });
 
 export default app;
