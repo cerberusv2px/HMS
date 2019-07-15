@@ -4,7 +4,7 @@ import winston, { format } from 'winston';
 import 'winston-daily-rotate-file';
 
 const LOG_DIR = process.env.LOG_DIR || 'logs';
-const LOG_LEVEL = process.env.LOG_LEVEL || 'info';
+// const LOG_LEVEL = process.env.LOG_LEVEL || 'info';
 
 // Create log directory if not exist
 if (!fs.existsSync(LOG_DIR)) {

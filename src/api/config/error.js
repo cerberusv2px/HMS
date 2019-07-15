@@ -14,7 +14,7 @@ export const errors = {
   CHILD_TARGET_INVALID: 'CHILD_TARGET_INVALID',
   NOT_OWNED: 'NOT_OWNED',
   INVOICE_EXISTS: 'INVOICE_EXISTS'
-}
+};
 
 export const errorDetail = {
   FORBIDDEN: {
@@ -30,7 +30,7 @@ export const errorDetail = {
     code: 422
   },
   FAILED: {
-    message: 'Something went wrong. Do not worry. It shouldn\'t be that horrible.',
+    message: `Something went wrong. Do not worry. It shouldn't be that horrible`,
     code: 500
   },
   INVALID_CREDENTIALS: {
@@ -77,4 +77,4 @@ export const errorDetail = {
     message: 'The invoice number requested already exists.',
     code: 409
   }
-}
+};

@@ -1,5 +1,5 @@
 import './env';
-import fs from 'fs';
+// import fs from 'fs';
 import express from 'express';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
@@ -7,7 +7,7 @@ import compression from 'compression';
 import morgan from 'morgan';
 import json from './middlewares/json';
 import logger, { logStream } from './utils/logger';
-import * as errorHandler from './middlewares/errorHandler';
+// import * as errorHandler from './middlewares/errorHandler';
 
 const routes = require('./routes');
 const app = express();

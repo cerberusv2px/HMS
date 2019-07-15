@@ -1,4 +1,3 @@
-import { errors } from '../config';
 import { Hospital } from '../models';
 import Boom from 'boom';
 
