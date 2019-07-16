@@ -1,4 +1,4 @@
-import { Patient, Hospital } from '../models';
+import { Patient } from '../models';
 import Boom from 'boom';
 
 export default class PatientService {
@@ -9,7 +9,7 @@ export default class PatientService {
   findById(id) {
     return Patient.query()
       .findById(id)
-      .eager('Hospitals')
+      .eager('Hospitals as hospital')
       .first()
       .then(patient => {
         if (!patient) {
@@ -18,5 +18,12 @@ export default class PatientService {
 
         return patient;
       });
+  }
+
+  findByAddress(address) {
+    return Patient.query()
+      .where('address', '=', address)
+      .orderBy('name')
+      .then(patients => patients);
   }
 }
