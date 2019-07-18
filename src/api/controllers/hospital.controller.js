@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { hospitalService } from '../services';
+import { hospitalValidator, checkIfHospitalExists } from '../validators/hospital.validator';
 
 let router = Router();
 
@@ -13,6 +14,14 @@ router.get('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   hospitalService
     .findById(req.params.id)
+    .then(data => res.json({ data }))
+    .catch(err => next(err));
+});
+
+router.post('/', checkIfHospitalExists, hospitalValidator, (req, res, next) => {
+  console.log(req.body);
+  hospitalService
+    .createHospital(req.body)
     .then(data => res.json({ data }))
     .catch(err => next(err));
 });

@@ -23,7 +23,6 @@ router.get('/:id', (req, res, next) => {
     .findById(req.params.id)
     .then(data => res.json({ data }))
     .catch(err => next(err));
-})
-;
+});
 
 export default router;

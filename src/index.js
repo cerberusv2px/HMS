@@ -7,7 +7,7 @@ import compression from 'compression';
 import morgan from 'morgan';
 import json from './middlewares/json';
 import logger, { logStream } from './utils/logger';
-// import * as errorHandler from './middlewares/errorHandler';
+import * as errorHandler from './middlewares/errorHandler';
 
 const routes = require('./routes');
 const app = express();
@@ -23,11 +23,15 @@ app.set('host', APP_HOST);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(errorHandler.bodyParser);
 app.use(compression());
 app.use(morgan('tiny', { stream: logStream }));
 app.use(json);
 
 app.use('/api', routes);
+
+app.use(errorHandler.genericErrorHandler);
+app.use(errorHandler.methodNotAllowed);
 
 app.listen(app.get('port'), app.get('host'), () => {
   logger.info(`Server started at https://${app.get('host')}:${app.get('port')}/api`);

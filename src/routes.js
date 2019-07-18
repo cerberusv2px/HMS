@@ -1,4 +1,4 @@
-import { hospitalController, patientController } from './api/controllers';
+import { hospitalController, patientController, doctorController } from './api/controllers';
 import Router from 'express';
 
 let router = Router();
@@ -9,4 +9,6 @@ router.get('/', function(req, res, next) {
 
 router.use('/hospital', hospitalController);
 router.use('/patient', patientController);
+router.use('/doctor', doctorController);
+
 module.exports = router;

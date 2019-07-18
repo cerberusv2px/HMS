@@ -10,22 +10,6 @@ class Hospital extends Model {
   static get idColumn() {
     return 'id';
   }
-
-  name() {
-    return this.name;
-  }
-
-  address() {
-    return this.address;
-  }
-
-  phoneNumber() {
-    return this.phone_number;
-  }
-
-  static searchableAttributes() {
-    return ['name', 'address'];
-  }
 }
 
 export default Hospital;
