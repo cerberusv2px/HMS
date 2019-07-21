@@ -44,7 +44,7 @@ export default class HospitalService {
 
   findHospitalExists(name) {
     return Hospital.query()
-      .where('name', 'like', `${name.charAt(0)}%`)
+      .where('name', 'like', `${name.charAt(0)}`)
       .then(hospitals => {
         return hospitals.length === 0;
       });

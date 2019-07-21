@@ -25,10 +25,6 @@ export default class Doctor extends Model {
     };
   }
 
-  name() {
-    return this.name;
-  }
-
   hospitalId() {
     return this.hospital_id;
   }

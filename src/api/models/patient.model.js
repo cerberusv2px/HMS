@@ -25,18 +25,6 @@ export default class Patients extends Model {
     };
   }
 
-  name() {
-    return this.name;
-  }
-
-  address() {
-    return this.address;
-  }
-
-  dob() {
-    return this.dob;
-  }
-
   hospitalId() {
     return this.hospital_id;
   }
