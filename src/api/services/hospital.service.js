@@ -11,6 +11,7 @@ export default class HospitalService {
     return Hospital.query()
       .findById(id)
       .first()
+      .eager('pharmacy')
       .then(hospital => {
         if (!hospital) {
           throw Boom.notFound('Hospital not found');
