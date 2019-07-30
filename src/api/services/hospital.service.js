@@ -1,5 +1,5 @@
 import { Hospital } from '../models';
-import Boom from 'boom';
+import { boomError, ERROR_TYPE } from '../../utils/boomError';
 import { patientService } from './';
 
 export default class HospitalService {
@@ -14,7 +14,7 @@ export default class HospitalService {
       .eager('pharmacy')
       .then(hospital => {
         if (!hospital) {
-          throw Boom.notFound('Hospital not found');
+          boomError(ERROR_TYPE.NOT_FOUND);
         }
 
         return hospital;

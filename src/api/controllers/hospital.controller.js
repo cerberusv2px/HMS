@@ -19,7 +19,6 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.post('/', checkIfHospitalExists, hospitalValidator, (req, res, next) => {
-  console.log(req.body);
   hospitalService
     .createHospital(req.body)
     .then(data => res.json({ data }))

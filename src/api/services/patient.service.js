@@ -1,5 +1,5 @@
 import { Patient } from '../models';
-import Boom from 'boom';
+import { boomError, ERROR_TYPE } from '../../utils/boomError';
 
 export default class PatientService {
   fetchAll() {
@@ -13,7 +13,7 @@ export default class PatientService {
       .first()
       .then(patient => {
         if (!patient) {
-          throw Boom.notFound('Record not found');
+          boomError(ERROR_TYPE.NOT_FOUND);
         }
 
         return patient;
