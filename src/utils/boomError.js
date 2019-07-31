@@ -33,19 +33,19 @@ const ERROR_DETAIL = {
 const boomError = (error, message = '') => {
   switch (error) {
     case ERROR_TYPE.BAD_REQUEST:
-      throw new Boom.badRequest(ERROR_DETAIL.BAD_REQUEST.message);
+      throw Boom.badRequest(ERROR_DETAIL.BAD_REQUEST.message);
     case ERROR_TYPE.UNAUTHORIZED:
-      throw new Boom.unauthorized(ERROR_DETAIL.UNAUTHORIZED.message);
+      throw Boom.unauthorized(ERROR_DETAIL.UNAUTHORIZED.message);
     case ERROR_TYPE.FORBIDDEN:
-      throw new Boom.forbidden(ERROR_DETAIL.FORBIDDEN.message);
+      throw Boom.forbidden(ERROR_DETAIL.FORBIDDEN.message);
     case ERROR_TYPE.NOT_FOUND:
-      throw new Boom.notFound(ERROR_DETAIL.NOT_FOUND.message);
+      throw Boom.notFound(ERROR_DETAIL.NOT_FOUND.message);
     case ERROR_TYPE.SERVER_UNAVAILABLE:
-      throw new Boom.serverUnavailable(ERROR_DETAIL.SERVER_UNAVAILABLE.message);
+      throw Boom.serverUnavailable(ERROR_DETAIL.SERVER_UNAVAILABLE.message);
     case ERROR_TYPE.BAD_IMPLEMENTATION:
-      throw new Boom.badImplementation(ERROR_DETAIL.BAD_IMPLEMENTATION.message);
+      throw Boom.badImplementation(ERROR_DETAIL.BAD_IMPLEMENTATION.message);
     default:
-      throw new Boom.badImplementation(message);
+      throw Boom.badImplementation(message);
   }
 };
 

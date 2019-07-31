@@ -15,5 +15,11 @@ router.post('/create', userValidator, (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.post('/login', (req, res, next) => {
+  userService.login(req.body.username, req.body.password)
+    .then(data => res.json({ data }))
+    .catch(err => next(err));
+});
+
 export default router;
 
