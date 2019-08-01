@@ -15,7 +15,7 @@ export default class UserService {
       .first()
       .then(user => {
         if (!user) {
-          throw new boomError(ERROR_TYPE.NOT_FOUND);
+          return boomError(ERROR_TYPE.NOT_FOUND);
         }
         return user;
       });
@@ -27,7 +27,7 @@ export default class UserService {
       .first()
       .then(user => {
         if (!user) {
-          boomError(ERROR_TYPE.NOT_FOUND);
+          return boomError(ERROR_TYPE.NOT_FOUND);
         }
         return user;
       });
@@ -81,6 +81,8 @@ export default class UserService {
 
   verifyAccessToken(tokenWithPrefix) {
     // here token[0] is "Bearer" and token[1] is the token value
+    // Authorization: Bearer bac , Token jflajldjas;
+    //
     const token = tokenWithPrefix.split(' ')[1];
     return this._verifyToken(token, jwtConfig.SECRET_ACCESS_KEY);
   }
@@ -101,7 +103,7 @@ export default class UserService {
   }
 
   _getAccessAndRefreshToken(userId)  {
-    const accessToken = jwtUtils.createToken({ userId }, jwtConfig.SECRET_ACCESS_KEY, jwtConfig.ACCESS_TOKEN_CONFIG);
+    const accessToken = jwtUtils.createToken({ userId: userId, name: 'Bibek'  }, jwtConfig.SECRET_ACCESS_KEY, jwtConfig.ACCESS_TOKEN_CONFIG);
     const refreshToken = jwtUtils.createToken({ userId }, jwtConfig.SECRET_REFRESH_KEY, jwtConfig.REFRESH_TOKEN_CONFIG);
     return {
       accessToken,

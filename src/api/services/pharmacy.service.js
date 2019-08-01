@@ -13,9 +13,8 @@ export default class PharmacyService {
       .first()
       .then(phar => {
         if (!phar) {
-          boomError(ERROR_TYPE.NOT_FOUND);
+          return boomError(ERROR_TYPE.NOT_FOUND);
         }
-
         return phar;
       });
   }

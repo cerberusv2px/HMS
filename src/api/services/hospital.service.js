@@ -14,7 +14,7 @@ export default class HospitalService {
       .eager('pharmacy')
       .then(hospital => {
         if (!hospital) {
-          boomError(ERROR_TYPE.NOT_FOUND);
+          return boomError(ERROR_TYPE.NOT_FOUND);
         }
 
         return hospital;

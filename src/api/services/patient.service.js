@@ -13,7 +13,7 @@ export default class PatientService {
       .first()
       .then(patient => {
         if (!patient) {
-          boomError(ERROR_TYPE.NOT_FOUND);
+          return boomError(ERROR_TYPE.NOT_FOUND);
         }
 
         return patient;
