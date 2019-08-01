@@ -80,6 +80,7 @@ export default class UserService {
   }
 
   verifyAccessToken(tokenWithPrefix) {
+    // here token[0] is "Bearer" and token[1] is the token value
     const token = tokenWithPrefix.split(' ')[1];
     return this._verifyToken(token, jwtConfig.SECRET_ACCESS_KEY);
   }

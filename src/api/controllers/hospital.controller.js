@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { hospitalService } from '../services';
 import { hospitalValidator, checkIfHospitalExists } from '../validators/hospital.validator';
 
-let router = Router();
+const router = Router();
 
 router.get('/', (req, res, next) => {
   hospitalService
