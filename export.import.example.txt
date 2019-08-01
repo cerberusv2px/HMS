@@ -1,0 +1,26 @@
+
+1. NAMED exports
+  -----lib.js
+  export const sqrt = Math.sqrt;
+  export function square(x){return x  x;}
+
+  -----main.js
+  import { square, sqrt } from 'lib';
+
+  =====OR=====
+  import  as lib from 'lib'
+
+2. DEFAULT exports
+  -----func.js
+  export default function(){}
+
+  -----main1.js
+  import func from 'func'
+
+3. Importing the default exports with named
+
+  export default 'bottles'; // the module exports a default string
+  export function empty(){ } // exports named function empty
+  export const pi = 3.14 // exports a constant
+
+  import bottles, {empty, pi as piValue} from '../filepath/filename';
