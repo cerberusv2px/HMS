@@ -103,7 +103,7 @@ export default class UserService {
   }
 
   _getAccessAndRefreshToken(userId)  {
-    const accessToken = jwtUtils.createToken({ userId: userId, name: 'Bibek'  }, jwtConfig.SECRET_ACCESS_KEY, jwtConfig.ACCESS_TOKEN_CONFIG);
+    const accessToken = jwtUtils.createToken({ userId }, jwtConfig.SECRET_ACCESS_KEY, jwtConfig.ACCESS_TOKEN_CONFIG);
     const refreshToken = jwtUtils.createToken({ userId }, jwtConfig.SECRET_REFRESH_KEY, jwtConfig.REFRESH_TOKEN_CONFIG);
     return {
       accessToken,
