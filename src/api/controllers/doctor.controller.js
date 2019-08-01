@@ -3,7 +3,7 @@ import { doctorService } from '../services';
 
 let router = Router();
 
-router.get('/', (res, req, next) => {
+router.get('/', (req, res, next) => {
   doctorService
     .fetchAll()
     .then(data => res.json({ data }))

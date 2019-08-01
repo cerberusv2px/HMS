@@ -10,6 +10,7 @@ import morgan from 'morgan';
 import favicon from 'serve-favicon';
 import json from './middlewares/json';
 import logger, { logStream } from './utils/logger';
+import { authenticate } from './middlewares/authentication';
 import * as errorHandler from './middlewares/errorHandler';
 
 const routes = require('./routes');
@@ -33,7 +34,7 @@ app.use(errorHandler.bodyParser);
 app.use(compression());
 app.use(morgan('tiny', { stream: logStream }));
 app.use(json);
-
+app.use(authenticate);
 app.use('/api', routes);
 
 app.use(errorHandler.genericErrorHandler);
