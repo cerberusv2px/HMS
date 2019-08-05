@@ -9,7 +9,7 @@ import {
 
 let router = Router();
 
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
   res.send('v2px');
 });
 

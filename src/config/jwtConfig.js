@@ -8,5 +8,5 @@ export const REFRESH_TOKEN_CONFIG = {
   issuer: 'ISO'
 };
 
-export const SECRET_ACCESS_KEY = process.env.SECRET_ACCESS_KEY;
-export const SECRET_REFRESH_KEY = process.env.SECRET_REFRESH_KEY;
+export const { SECRET_ACCESS_KEY } = process.env;
+export const { SECRET_REFRESH_KEY } = process.env;
