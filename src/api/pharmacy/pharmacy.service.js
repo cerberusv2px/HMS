@@ -1,4 +1,4 @@
-import { Pharmacy } from '../models';
+import { Pharmacy } from './';
 import { boomError, ERROR_TYPE } from '../../utils/boomError';
 
 export default class PharmacyService {

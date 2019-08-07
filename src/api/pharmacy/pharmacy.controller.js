@@ -1,25 +1,17 @@
 import { Router } from 'express';
-import { patientService } from '../services';
+import { pharmacyService } from './';
 
 let router = Router();
 
 router.get('/', (req, res, next) => {
-  patientService
+  pharmacyService
     .fetchAll()
     .then(data => res.json({ data }))
     .catch(err => next(err));
 });
 
-router.get('/filter', (req, res, next) => {
-  console.log(`query is: `, req.query);
-  patientService
-    .findByAddress(req.query.address)
-    .then(data => res.json({ data }))
-    .catch(err => next(err));
-});
-
 router.get('/:id', (req, res, next) => {
-  patientService
+  pharmacyService
     .findById(req.params.id)
     .then(data => res.json({ data }))
     .catch(err => next(err));

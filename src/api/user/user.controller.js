@@ -1,7 +1,6 @@
 import { Router } from 'express';
-import jwtAuth from '../../middlewares/jwtAuthenticate';
-import { userService } from '../services';
-import * as userValidator from '../validators/user.validator';
+import { userService } from './';
+import * as userValidator from './user.validator';
 
 const router = Router();
 

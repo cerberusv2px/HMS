@@ -5,7 +5,7 @@ import {
   doctorController,
   pharmacyController,
   userController,
-} from './api/controllers';
+} from './api';
 
 let router = Router();
 

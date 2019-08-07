@@ -1,4 +1,4 @@
-import { Patient } from '../models';
+import { Patient } from './';
 import { boomError, ERROR_TYPE } from '../../utils/boomError';
 
 export default class PatientService {

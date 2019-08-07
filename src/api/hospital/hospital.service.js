@@ -1,6 +1,6 @@
-import { Hospital } from '../models';
+import { Hospital } from './';
 import { boomError, ERROR_TYPE } from '../../utils/boomError';
-import { patientService } from './';
+import { patientService } from '../patient';
 
 export default class HospitalService {
   fetchAll() {

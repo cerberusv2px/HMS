@@ -1,5 +1,4 @@
-import HttpStatus from 'http-status-codes';
-import { userService } from '../api/services';
+import { userService } from '../api';
 import logger from '../utils/logger';
 import { boomError, ERROR_TYPE } from '../utils/boomError';
 

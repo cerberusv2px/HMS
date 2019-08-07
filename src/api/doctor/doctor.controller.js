@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { doctorService } from '../services';
+import { doctorService } from './';
 
 let router = Router();
 

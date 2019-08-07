@@ -1,4 +1,4 @@
-import { User } from '../models';
+import { User } from './';
 import { boomError, ERROR_TYPE } from '../../utils/boomError';
 import { generateHash, compare } from '../../utils/hashUtils';
 import * as jwtUtils from '../../utils/jwtUtils';

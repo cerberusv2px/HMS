@@ -1,9 +1,9 @@
 import Model from '../../database/db';
-import { Hospital } from './';
+import { Hospital } from '../hospital';
 
-const TABLE_NAME = 'patients';
+const TABLE_NAME = 'doctors';
 
-export default class Patients extends Model {
+export default class Doctor extends Model {
   static get tableName() {
     return TABLE_NAME;
   }
@@ -14,11 +14,11 @@ export default class Patients extends Model {
 
   static get relationMappings() {
     return {
-      Hospitals: {
+      hospitals: {
         relation: Model.BelongsToOneRelation,
         modelClass: Hospital,
         join: {
-          from: 'patients.hospital_id',
+          from: 'doctors.hospital_id',
           to: 'hospitals.id'
         }
       }
@@ -27,10 +27,6 @@ export default class Patients extends Model {
 
   hospitalId() {
     return this.hospital_id;
-  }
-
-  static searchableAttributes() {
-    return ['name', 'address'];
   }
 
   async Hospital() {

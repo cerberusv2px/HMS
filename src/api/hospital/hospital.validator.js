@@ -1,6 +1,6 @@
 import Joi from 'joi';
 import validate from '../../utils/validate';
-import { hospitalService } from '../services';
+import { hospitalService } from './';
 import Boom from 'boom';
 
 const SCHEMA = Joi.object().keys({

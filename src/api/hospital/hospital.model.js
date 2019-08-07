@@ -1,5 +1,5 @@
 import Model from '../../database/db';
-import { Pharmacy } from './';
+import { Pharmacy } from '../pharmacy';
 
 
 const TABLE_NAME = 'hospitals';

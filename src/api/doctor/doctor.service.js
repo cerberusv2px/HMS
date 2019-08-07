@@ -1,4 +1,4 @@
-import { Doctor } from '../models';
+import { Doctor } from './';
 
 export default class DoctorService {
   fetchAll() {
