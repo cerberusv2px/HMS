@@ -4,7 +4,7 @@
   "description": "Hospital Management System",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node --presets es2015 src/index.js",
+    "start": "node dist",
     "seed": "knex seed:run --knexfile src/database/knexfile.js",
     "build": "rimraf dist && babel src -D --out-dir dist",
     "migrate": "knex migrate:latest --knexfile src/database/knexfile.js ",

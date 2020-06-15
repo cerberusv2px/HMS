@@ -4,8 +4,4 @@ import DoctorService from './doctor.service';
 
 const doctorService = new DoctorService();
 
-export {
-  doctorController,
-  doctorService,
-  Doctor
-};
+export { doctorController, doctorService, Doctor };
