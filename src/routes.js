@@ -1,11 +1,5 @@
 import Router from 'express';
-import {
-  hospitalController,
-  patientController,
-  doctorController,
-  pharmacyController,
-  userController,
-} from './api';
+import { doctorController, hospitalController, patientController, pharmacyController, userController, } from './api';
 
 let router = Router();
 

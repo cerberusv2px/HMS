@@ -6,7 +6,7 @@
 
 const TABLE_NAME = 'pharmacy';
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // Deletes all existing entries
   return knex(TABLE_NAME)
     .del()

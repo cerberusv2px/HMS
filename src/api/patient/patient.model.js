@@ -25,12 +25,12 @@ export default class Patient extends Model {
     };
   }
 
-  hospitalId() {
-    return this.hospital_id;
-  }
-
   static searchableAttributes() {
     return ['name', 'address'];
+  }
+
+  hospitalId() {
+    return this.hospital_id;
   }
 
   async Hospital() {

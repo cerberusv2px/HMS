@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { hospitalService } from './';
-import { hospitalValidator, checkIfHospitalExists } from './hospital.validator';
+import { checkIfHospitalExists, hospitalValidator } from './hospital.validator';
 
 const router = Router();
 

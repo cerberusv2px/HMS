@@ -3,7 +3,7 @@
  * @param  {object} Promise
  * @return {Promise}
  */
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // Deletes all existing entries
   return knex('hospitals')
     .del()

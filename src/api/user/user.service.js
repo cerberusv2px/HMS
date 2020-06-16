@@ -1,6 +1,6 @@
 import { User } from './';
 import { boomError, ERROR_TYPE } from '../../utils/boomError';
-import { generateHash, compare } from '../../utils/hashUtils';
+import { compare, generateHash } from '../../utils/hashUtils';
 import * as jwtUtils from '../../utils/jwtUtils';
 import * as jwtConfig from '../../config/jwtConfig';
 
@@ -102,7 +102,7 @@ export default class UserService {
     }
   }
 
-  _getAccessAndRefreshToken(userId)  {
+  _getAccessAndRefreshToken(userId) {
     const accessToken = jwtUtils.createToken({ userId }, jwtConfig.SECRET_ACCESS_KEY, jwtConfig.ACCESS_TOKEN_CONFIG);
     const refreshToken = jwtUtils.createToken({ userId }, jwtConfig.SECRET_REFRESH_KEY, jwtConfig.REFRESH_TOKEN_CONFIG);
     return {

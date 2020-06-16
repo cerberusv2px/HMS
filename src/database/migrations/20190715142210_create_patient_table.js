@@ -4,7 +4,7 @@
  */
 const TABLE_NAME = 'patients';
 
-exports.up = function(knex) {
+exports.up = function (knex) {
   return knex.schema.createTable(TABLE_NAME, table => {
     table.increments();
     table.string('name').notNull();
@@ -24,6 +24,6 @@ exports.up = function(knex) {
  * @param  {object} knex
  * @return {Promise}
  */
-exports.down = function(knex) {
+exports.down = function (knex) {
   return knex.schema.dropTable(TABLE_NAME);
 };
